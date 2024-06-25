@@ -1,0 +1,65 @@
+/* CSS */
+@keyframes smooth {
+    from {
+        opacity: 0.15;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Rest of your CSS styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    overflow: hidden;
+    border: solid 2px #000;
+    max-width: 12rem;
+    max-height: 6rem;
+    padding: .5rem 4rem;
+    border-radius: 3rem;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .fa-circle-dot {
+    transform: translateX(-65%);
+    position: absolute;
+    font-size: 75px;
+    z-index: 99;
+    cursor: pointer;
+    transition: all ease-in-out 1s;
+}
+
+.seen img,
+.unseen img {
+    max-width: 12rem;
+    object-fit: contain;
+    display: none;
+}
+
+.seen.active img,
+.unseen.active img {
+    display: block;
+    opacity: 1;
+    animation: smooth 1s ease-in-out;
+}
+
+.fa-circle-dot.active {
+    transform: translateX(65%);
+}
